@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-icons">
+                <button class="icon notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge"></span>
+                </button>
+                <button class="icon settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="icon profile">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li class="active">Bus Management</li>
+                <li>School Management (Coming Soon)</li>
+                <li>Issue Notice</li>
+                <li>Tickets</li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Enter bus number">
+                <button id="search-button">Search Bus</button>
+                <button class="add-button">+ Add driver / Conductor</button>
+            </div>
+
+            <div id="bus-details"></div>
+
+            <div class="bus-card-container" id="bus-card-container">
+                <div class="bus-card">
+                    <span class="bus-no">81</span>
+                    <p>Official bus no. - MP.09.CZ.8822</p>
+                    <p>Driver name - Rajesh Kumar</p>
+                    <p>Bus route - Khandwa road - school</p>
+                </div>
+                <div class="bus-card">
+                    <span class="bus-no">82</span>
+                    <p>Official bus no. - MP.09.CZ.8823</p>
+                    <p>Driver name - Brijesh Rathore</p>
+                    <p>Bus route - Khandwa road - school</p>
+                </div>
+                <div class="bus-card">
+                    <span class="bus-no">83</span>
+                    <p>Official bus no. - MP.09.CZ.8824</p>
+                    <p>Driver name - Suresh Sharma</p>
+                    <p>Bus route - AB road - school</p>
+                </div>
+                <div class="bus-card">
+                    <span class="bus-no">84</span>
+                    <p>Official bus no. - MP.09.CZ.8825</p>
+                    <p>Driver name - Anil Mehta</p>
+                    <p>Bus route - Vijay Nagar - school</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="home.js"></script> <!-- Link to hm.js -->
+</body>
+</html>

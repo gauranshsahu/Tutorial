@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+    <link rel="stylesheet" href="home1.css">
+</head>
+<body>
+    <div class="bus-container">
+        <div class="bus-details">
+            <h1>Bus Details</h1>
+            <div id="bus-info">
+                <!-- Bus info will be populated here -->
+            </div>
+            <div class="contact-info">
+                <p>Contact Driver: <span id="driver-contact"></span></p>
+                <p>Contact Conductor: <span id="conductor-contact"></span></p>
+            </div>
+
+           <div class="status-bar">
+  <span class="closed-icon">&#128693;</span>
+  <span class="closed">Closed</span>
+  <span class="unlocked-icon">&#128272;</span>
+  <span class="unlocked">Unlocked</span>
+  <span class="percentage">02/100 (0.1%)</span>
+</div>
+
+            <div class="button-container">
+                <button class="action-button">Announcement</button>
+                <button class="action-button">Manage Bus</button>
+            </div>
+        </div>
+
+        <div class="camera-section">
+            <div class="camera-row">
+                <div class="camera" id="cam1">Cam 1</div>
+                <div class="camera" id="cam2">Cam 2</div>
+                <div class="camera" id="cam3">Cam 3</div>
+            </div>
+            <div class="camera-row">
+                <div class="camera" id="cam4">Cam 4</div>
+                <div class="camera" id="cam5">Cam 5</div>
+                <div class="camera" id="cam6">Cam 6</div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h2>Bus Tracking</h2>
+            <div id="map">Map</div>
+        </div>
+    </div>
+
+    <script>
+        // Sample bus data with contact numbers
+        var busData = {
+            81: { 
+                detail: "Official bus no. - MP.09.CZ.8822<br>Driver name - Rajesh Kumar<br>Bus route - Khandwa road - school",
+                driverContact: "+91 9476873693",
+                conductorContact: "+91 9837387361"
+            },
+            82: { 
+                detail: "Official bus no. - MP.09.CZ.8823<br>Driver name - Brijesh Rathore<br>Bus route - Khandwa road - school",
+                driverContact: "+91 9476873693",
+                conductorContact: "+91 9837387361"
+            },
+            83: { 
+                detail: "Official bus no. - MP.09.CZ.8824<br>Driver name - Suresh Sharma<br>Bus route - AB road - school",
+                driverContact: "+91 9476873693",
+                conductorContact: "+91 9837387361"
+            },
+            84: { 
+                detail: "Official bus no. - MP.09.CZ.8825<br>Driver name - Anil Mehta<br>Bus route - Vijay Nagar - school",
+                driverContact: "+91 9476873693",
+                conductorContact: "+91 9837387361"
+            },
+        };
+
+        // Function to get query parameters
+        function getQueryParam(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the bus number from URL
+        var busNumber = getQueryParam('bus');
+        var busInfoDiv = document.getElementById('bus-info');
+        var driverContactSpan = document.getElementById('driver-contact');
+        var conductorContactSpan = document.getElementById('conductor-contact');
+
+        if (busData[busNumber]) {
+            busInfoDiv.innerHTML = busData[busNumber].detail;
+            driverContactSpan.innerHTML = busData[busNumber].driverContact;
+            conductorContactSpan.innerHTML = busData[busNumber].conductorContact;
+        } else {
+            busInfoDiv.innerHTML = "No details found for bus number: " + busNumber;
+        }
+    </script>
+</body>
+</html>
